@@ -1,5 +1,6 @@
 from constants import *
 from game.casting.actor import Actor
+from constants import ROOT,ASSETS,DATA
 
 
 class Stats(Actor):
@@ -11,6 +12,12 @@ class Stats(Actor):
         self._level = 1
         self._lives = DEFAULT_LIVES
         self._score = 0
+        self._high_score = open(os.path.join(DATA,'high_score.txt'),'r')
+        for self._high_score in self._high_score:
+            if self._high_score == "":
+                self._high_score = 0
+            else:
+                self._high_score = self._high_score
 
     def add_life(self):
         """Adds one life."""
@@ -48,6 +55,14 @@ class Stats(Actor):
             A number representing the score.
         """
         return self._score
+
+    def get_high_score(self):
+        """Gets the high score from the file.
+
+        Returns:
+            A number representing the high score.
+        """
+        return self._high_score
 
     def lose_life(self):
         """Removes one life."""
