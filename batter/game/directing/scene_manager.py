@@ -217,10 +217,15 @@ class SceneManager:
 
     def _add_score(self, cast):
         cast.clear_actors(SCORE_GROUP)
-        text = Text(SCORE_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_CENTER)
-        position = Point(CENTER_X, HUD_MARGIN)
+        cast.clear_actors(HIGH_SCORE_GROUP)
+        text = Text(SCORE_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_RIGHT)
+        text2 = Text(HIGH_SCORE_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_LEFT)
+        position = Point(CENTER_X - 150, HUD_MARGIN)
+        position2 = Point(CENTER_X + 80, HUD_MARGIN)
         label = Label(text, position)
+        label2 = Label(text2, position2)
         cast.add_actor(SCORE_GROUP, label)
+        cast.add_actor(HIGH_SCORE_GROUP, label2)
 
     def _add_stats(self, cast):
         cast.clear_actors(STATS_GROUP)

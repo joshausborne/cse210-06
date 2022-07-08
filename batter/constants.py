@@ -1,9 +1,15 @@
 import pathlib
+import os
 from game.casting.color import Color
 
 # -------------------------------------------------------------------------------------------------- 
 # GENERAL GAME CONSTANTS
 # -------------------------------------------------------------------------------------------------- 
+
+# PATHS
+ROOT = os.path.dirname(os.path.abspath(__file__))
+ASSETS = os.path.join(ROOT,'assets')
+DATA = os.path.join(ASSETS,'data')
 
 # GAME
 GAME_NAME = "Batter"
@@ -86,9 +92,11 @@ HUD_MARGIN = 15
 LEVEL_GROUP = "level"
 LIVES_GROUP = "lives"
 SCORE_GROUP = "score"
+HIGH_SCORE_GROUP = "high_score"
 LEVEL_FORMAT = "LEVEL: {}"
 LIVES_FORMAT = "LIVES: {}"
 SCORE_FORMAT = "SCORE: {}"
+HIGH_SCORE_FORMAT = "HIGH SCORE: {}"
 
 # BALL
 BALL_GROUP = "balls"

@@ -12,6 +12,7 @@ class DrawHudAction(Action):
         self._draw_label(cast, LEVEL_GROUP, LEVEL_FORMAT, stats.get_level())
         self._draw_label(cast, LIVES_GROUP, LIVES_FORMAT, stats.get_lives())
         self._draw_label(cast, SCORE_GROUP, SCORE_FORMAT, stats.get_score())
+        self._draw_label(cast, HIGH_SCORE_GROUP, HIGH_SCORE_FORMAT, stats.get_high_score())
 # **********************************************************************************************
     # You found the bug. Great job!
     # **********************************************************************************************
