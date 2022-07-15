@@ -30,3 +30,7 @@ root                    (project root folder)
 * Jesus Tortolero
 * Felix Flores
 * Lilly Armenta
+
+## Running the game
+---
+* in the root of the repo type `python batter`
