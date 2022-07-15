@@ -1,5 +1,6 @@
 from constants import *
 from game.casting.actor import Actor
+from game.scripting.action import Action
 from constants import ROOT,ASSETS,DATA
 
 
@@ -63,6 +64,26 @@ class Stats(Actor):
             A number representing the high score.
         """
         return self._high_score
+
+    def set_high_score(self, my_score, my_high_score):
+        """Sets the high score in the file.
+
+        """
+        my_score = 500
+
+        my_high_score = open(os.path.join(DATA,'high_score.txt'),'r')
+        for my_high_score in my_high_score:
+            if my_high_score == "":
+                my_high_score = 0
+            else:
+                my_high_score = my_high_score
+
+        print("### OUR MESSAGE ###" + my_high_score)
+
+        if my_score > my_high_score:
+            f = open(os.path.join(DATA,'high_score.txt'),'w')
+            f.write(my_score)
+            f.close()
 
     def lose_life(self):
         """Removes one life."""

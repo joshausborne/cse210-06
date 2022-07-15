@@ -78,6 +78,7 @@ class SceneManager:
             self._prepare_in_play(cast, script)
         elif scene == GAME_OVER:    
             self._prepare_game_over(cast, script)
+            Stats.set_high_score(cast._score,self._high_score)
     
     # ----------------------------------------------------------------------------------------------
     # scene methods
